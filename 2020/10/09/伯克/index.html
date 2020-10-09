@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>伯克 | 玥如宇凡</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="项目小记 | 关于实时邮件报警项目背景产品有泄露测试工位，为了减少报废，需要做一个预警系统，一旦数据组的偏差值大于某个预设阈值，则将邮件发出，报警邮件中配有图片，实时数据组，以及数据离散图示。软件设计1. 因为不是一条线，所以需要考虑到多线程2. 数据采集使用的labview，采集一定量数据，并且在设定量的数据达到目标偏差时，将当前实时数据写入文件。3. Python进行文件时间戳监控，一旦更新，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="伯克">
+<meta property="og:url" content="http://yoursite.com/2020/10/09/%E4%BC%AF%E5%85%8B/index.html">
+<meta property="og:site_name" content="玥如宇凡">
+<meta property="og:description" content="项目小记 | 关于实时邮件报警项目背景产品有泄露测试工位，为了减少报废，需要做一个预警系统，一旦数据组的偏差值大于某个预设阈值，则将邮件发出，报警邮件中配有图片，实时数据组，以及数据离散图示。软件设计1. 因为不是一条线，所以需要考虑到多线程2. 数据采集使用的labview，采集一定量数据，并且在设定量的数据达到目标偏差时，将当前实时数据写入文件。3. Python进行文件时间戳监控，一旦更新，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/t4X9pXgv/shoowme.jpg">
+<meta property="article:published_time" content="2020-10-09T12:23:26.920Z">
+<meta property="article:modified_time" content="2020-10-09T12:22:26.000Z">
+<meta property="article:author" content="Quegong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/t4X9pXgv/shoowme.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="玥如宇凡" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">玥如宇凡</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-伯克" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/09/%E4%BC%AF%E5%85%8B/" class="article-date">
+  <time datetime="2020-10-09T12:23:26.920Z" itemprop="datePublished">2020-10-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      伯克
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="项目小记-关于实时邮件报警项目"><a href="#项目小记-关于实时邮件报警项目" class="headerlink" title="项目小记 | 关于实时邮件报警项目"></a>项目小记 | 关于实时邮件报警项目</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><h3 id="产品有泄露测试工位，为了减少报废，需要做一个预警系统，一旦数据组的偏差值大于某个预设阈值，则将邮件发出，报警邮件中配有图片，实时数据组，以及数据离散图示。"><a href="#产品有泄露测试工位，为了减少报废，需要做一个预警系统，一旦数据组的偏差值大于某个预设阈值，则将邮件发出，报警邮件中配有图片，实时数据组，以及数据离散图示。" class="headerlink" title="产品有泄露测试工位，为了减少报废，需要做一个预警系统，一旦数据组的偏差值大于某个预设阈值，则将邮件发出，报警邮件中配有图片，实时数据组，以及数据离散图示。"></a>产品有泄露测试工位，为了减少报废，需要做一个预警系统，一旦数据组的偏差值大于某个预设阈值，则将邮件发出，报警邮件中配有图片，实时数据组，以及数据离散图示。</h3><h2 id="软件设计"><a href="#软件设计" class="headerlink" title="软件设计"></a>软件设计</h2><h3 id="1-因为不是一条线，所以需要考虑到多线程"><a href="#1-因为不是一条线，所以需要考虑到多线程" class="headerlink" title="1. 因为不是一条线，所以需要考虑到多线程"></a>1. 因为不是一条线，所以需要考虑到多线程</h3><h3 id="2-数据采集使用的labview，采集一定量数据，并且在设定量的数据达到目标偏差时，将当前实时数据写入文件。"><a href="#2-数据采集使用的labview，采集一定量数据，并且在设定量的数据达到目标偏差时，将当前实时数据写入文件。" class="headerlink" title="2. 数据采集使用的labview，采集一定量数据，并且在设定量的数据达到目标偏差时，将当前实时数据写入文件。"></a>2. 数据采集使用的labview，采集一定量数据，并且在设定量的数据达到目标偏差时，将当前实时数据写入文件。</h3><h3 id="3-Python进行文件时间戳监控，一旦更新，则将数据读取"><a href="#3-Python进行文件时间戳监控，一旦更新，则将数据读取" class="headerlink" title="3. Python进行文件时间戳监控，一旦更新，则将数据读取"></a>3. Python进行文件时间戳监控，一旦更新，则将数据读取</h3><h3 id="4-考虑到labview统计方法与正常的统计方法有差异，需要使用python进行二次确认"><a href="#4-考虑到labview统计方法与正常的统计方法有差异，需要使用python进行二次确认" class="headerlink" title="4. 考虑到labview统计方法与正常的统计方法有差异，需要使用python进行二次确认"></a>4. 考虑到labview统计方法与正常的统计方法有差异，需要使用python进行二次确认</h3><h3 id="5-需要2个子程序，一个负责发邮件，一个负责生成图片"><a href="#5-需要2个子程序，一个负责发邮件，一个负责生成图片" class="headerlink" title="5. 需要2个子程序，一个负责发邮件，一个负责生成图片"></a>5. 需要2个子程序，一个负责发邮件，一个负责生成图片</h3><h2 id="主程序及多线程实现"><a href="#主程序及多线程实现" class="headerlink" title="主程序及多线程实现"></a>主程序及多线程实现</h2><h3 id="main-loop-扫描路径下目录，决定需要几个线程，也可以自动增加线程"><a href="#main-loop-扫描路径下目录，决定需要几个线程，也可以自动增加线程" class="headerlink" title="main loop #扫描路径下目录，决定需要几个线程，也可以自动增加线程"></a>main loop #扫描路径下目录，决定需要几个线程，也可以自动增加线程</h3><p>   “””</p>
+<pre><code>while True:   
+    try:
+
+        if not os.path.exists(os.path.join(path,&apos;config&apos;)):
+            os.makedirs(os.path.join(path,&apos;config&apos;))
+            f = open(os.path.join(path,&apos;config\\receiver.txt&apos;),&quot;w+&quot;)
+            f.write(&quot;aw101010@163.com&quot;)
+            receiver = &quot;aw101010@163.com&quot;
+            f.close()
+
+        else:
+            if not os.path.exists(os.path.join(path,&apos;config\\receiver.txt&apos;)):                
+                f = open(os.path.join(path,&apos;config\\receiver.txt&apos;),&quot;w+&quot;)
+                f.write(&quot;aw101010@163.com&quot;)
+                receiver = &quot;aw101010@163.com&quot;
+                f.close() 
+
+        filenames = os.listdir(path)
+        if filelistlen != len(filenames) or nlength != len(threadlist) :
+            try:
+                with open(os.path.join(path,&apos;config\\receiver.txt&apos;)) as f:
+                    receiver = f.read()
+                for each in filenames:
+                    s = each.split(&apos;.&apos;)
+                    if len(s)&gt;=2:
+                        if each.split(&apos;.&apos;)[1] == &apos;csv&apos;:
+                            pathf = os.path.join(path,each)                        
+                            if each.split(&apos;.&apos;)[0] in threadlist:
+                                next            
+                            else:
+                                name = each.split(&apos;.&apos;)[0]
+                                threadlist.append(name)
+                                i+=1
+                                nlength += 1
+                                name = my_thread(i,name,pathf,receiver)
+                                name.start()
+                                name.join(2)
+                                print(name)
+
+            except Exception as e:
+                logging.info(&quot;thread created failed&quot;)
+                logging.error(e)
+                print(e)
+                break
+            nlength = len(threadlist)
+            filelistlen = len(filenames)
+
+        print(&apos;main&apos;)
+
+        time.sleep(20)
+    except Exception as e:            
+        logging.info(&quot;thread created failed&quot;)
+        logging.error(e)
+        continue</code></pre><p>   “””</p>
+<h3 id="继承Threading-thread，使用thread类下run来实现子线程循环运行-判断文件是否更新"><a href="#继承Threading-thread，使用thread类下run来实现子线程循环运行-判断文件是否更新" class="headerlink" title="继承Threading.thread，使用thread类下run来实现子线程循环运行,判断文件是否更新"></a>继承Threading.thread，使用thread类下run来实现子线程循环运行,判断文件是否更新</h3><pre><code>class my_thread(threading.Thread):
+
+def __init__(self,threadID,name,path,receiver):
+    threading.Thread.__init__(self)
+    self.threadID = threadID
+    self.name = name
+    self.path = path
+    self.receiver = receiver
+
+def run(self):
+    self.modifydateold = time.strftime(&apos;%Y-%m-%d %H:%M:%S&apos;,time.localtime(os.stat(self.path).st_mtime))
+    while True:
+      #  if not os.path.exists(self.path):
+      #      break
+
+        print(self.name,&apos; running&apos;)
+        try:
+            self.modifydate = time.strftime(&apos;%Y-%m-%d %H:%M:%S&apos;,time.localtime(os.stat(self.path).st_mtime))
+            if self.modifydateold != self.modifydate:
+                print(self.name , self.modifydateold )
+                self.send_mail_html(self.name,self.receiver)
+                self.modifydateold = self.modifydate
+        except Exception as e:
+     #       print(&apos;watch&apos;+ e)
+            logging.info(&quot;Thread failed&quot;)
+            logging.error(e)
+            threadlist.remove(self.name)
+            break
+        time.sleep(8)</code></pre><h2 id="邮件实现"><a href="#邮件实现" class="headerlink" title="邮件实现"></a>邮件实现</h2><h3 id="先制作一个HTML文件模板，作为邮件模板"><a href="#先制作一个HTML文件模板，作为邮件模板" class="headerlink" title="先制作一个HTML文件模板，作为邮件模板"></a>先制作一个HTML文件模板，作为邮件模板</h3><h4 id="1-html语言中需要有最大值标记-maxvalue-MIMEText-mail-body-replace-‘-maxvalue-’-str-checkpic-Instance-maxvalue"><a href="#1-html语言中需要有最大值标记-maxvalue-MIMEText-mail-body-replace-‘-maxvalue-’-str-checkpic-Instance-maxvalue" class="headerlink" title="1. html语言中需要有最大值标记  {maxvalue}   / MIMEText(mail_body.replace(‘{maxvalue}’,str(checkpic_Instance.maxvalue))"></a>1. html语言中需要有最大值标记  {maxvalue}   / MIMEText(mail_body.replace(‘{maxvalue}’,str(checkpic_Instance.maxvalue))</h4><h4 id="2-html语言中需要有图片标记-img-src-”cid-dns-config”-alt-”dns配置”-gt"><a href="#2-html语言中需要有图片标记-img-src-”cid-dns-config”-alt-”dns配置”-gt" class="headerlink" title="2. html语言中需要有图片标记  img  src=”cid:dns_config”  alt=”dns配置” &gt;  /"></a>2. html语言中需要有图片标记  img  src=”cid:dns_config”  alt=”dns配置” &gt;  /</h4><pre><code>file = open(picpath,&apos;rb&apos;)
+img_data = file.read()
+file.close()
+img = MIMEImage(img_data)
+img.add_header(&apos;Content-ID&apos;,&apos;dns_config&apos;) 
+msgRoot.attach(img)</code></pre><h4 id="主要使用的是HTML语言。"><a href="#主要使用的是HTML语言。" class="headerlink" title="主要使用的是HTML语言。"></a>主要使用的是HTML语言。</h4><h2 id="图片生成"><a href="#图片生成" class="headerlink" title="图片生成"></a>图片生成</h2><h3 id="写了一个新的类checkpic，主要判断是否需要生成图片方法：picchecking"><a href="#写了一个新的类checkpic，主要判断是否需要生成图片方法：picchecking" class="headerlink" title="写了一个新的类checkpic，主要判断是否需要生成图片方法：picchecking()"></a>写了一个新的类checkpic，主要判断是否需要生成图片方法：picchecking()</h3><h3 id="方法图片生成：creatpic"><a href="#方法图片生成：creatpic" class="headerlink" title="方法图片生成：creatpic()"></a>方法图片生成：creatpic()</h3><h4 id="备注：代码比较简单，有个比较坑的是图片已开始使用seaborn生存，在PY文件运行没有问题，但是如果生成exe程序，则会提示"><a href="#备注：代码比较简单，有个比较坑的是图片已开始使用seaborn生存，在PY文件运行没有问题，但是如果生成exe程序，则会提示" class="headerlink" title="备注：代码比较简单，有个比较坑的是图片已开始使用seaborn生存，在PY文件运行没有问题，但是如果生成exe程序，则会提示"></a>备注：代码比较简单，有个比较坑的是图片已开始使用seaborn生存，在PY文件运行没有问题，但是如果生成exe程序，则会提示</h4><h4 id="缺少库文件-需要在PyInstaller-hooks目录下，将hook-pandas文件中添加缺失的Dll库名"><a href="#缺少库文件-需要在PyInstaller-hooks目录下，将hook-pandas文件中添加缺失的Dll库名" class="headerlink" title="缺少库文件;需要在PyInstaller\hooks目录下，将hook-pandas文件中添加缺失的Dll库名"></a>缺少库文件;需要在PyInstaller\hooks目录下，将hook-pandas文件中添加缺失的Dll库名</h4><img src="https://i.postimg.cc/t4X9pXgv/shoowme.jpg" alt="Alt text" title="Title text" />
+
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/10/09/%E4%BC%AF%E5%85%8B/" data-id="ckg28d40l00008k721f7l5o16" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/16/%E4%B8%AD%E4%BD%8D%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">中位数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/09/%E4%BC%AF%E5%85%8B/">伯克</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/16/%E4%B8%AD%E4%BD%8D%E6%95%B0/">中位数</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/05/%E5%BA%93%E6%96%87%E4%BB%B6%20%E5%B8%B8%E7%94%A8-checkpoint/">库文件 常用-checkpoint</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%AE%B0%E5%BD%95/">微信小程序记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/12/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Quegong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
